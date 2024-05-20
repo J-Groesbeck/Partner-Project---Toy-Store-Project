@@ -1,7 +1,7 @@
 const productsInfo = [{
     name: 'productname',
     price: 0.00,
-    image: 'productimgs/placeholder.jpg',
+    image: 'product-imgs/placeholder.png',
     description: 'productdescription',
     ages: 'productagerange'
 }
@@ -20,7 +20,7 @@ function generateProductCards() {
             ${product.name} (${product.ages})
             </div>
             <div class="card-body">
-                <h5 class="card-title"></h5>
+                <img src="${product.image}" class="w-100">
             </div>
             <div class="card-footer text-body-secondary row">
                  <div class="col-6">
