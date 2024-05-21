@@ -89,15 +89,71 @@ if (window.location.pathname.includes('products.html')) {
 let cartArray = []
 
 function addToCart(productNumber) {
-    cartArray.push(productsInfo[productNumber])
+    if (!(cartArray.includes(productsInfo[productNumber]))) {
+        cartArray.push(productsInfo[productNumber])
+    }
+}
+
+function removeFromCart(cartNumber) {
+    cartArray.splice(cartNumber, 1)
 }
 
 let cartContainer = document.getElementById('cart')
 
 function openCart() {
     cartContainer.innerHTML = ''
+    let i = 0
     cartArray.forEach(item => {
-        cartContainer.innerHTML = `
+        const card = document.createElement('div')
+        card.classList.add('col-12','mb-1')
+
+        card.innerHTML = `
+        <div class="card" style="width: 18rem;">
+            <img src="${item.image}" class="card-img-top">
+            <div class="card-body row">
+                <div class="col-12">
+                   <h5 class="card-title">${item.name}</h5>
+                </div>
+                <div class="col-6>
+                <label for="item-count${i}">How Many:</label>
+                <select name="item-count${i} id="itemAmount${i}" onchange="updatePrice(${i})">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                </select>
+                </div>
+                <div class="col-6>
+                   <p id="itemPrice${i}" class="card-text">$${item.price}</p>
+                </div>
+                <a onclick="removeFromCart(${i})" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
         `
+
+        cartContainer.appendChild(card)
+        i = i + 1
     });
+    const totalPrice = document.createElement('p')
+    totalPrice.innerHTML = `Total: $${getTotalPrice()}`
+}
+
+function updatePrice(itemNumber) {
+    let itemAmount = document.getElementById(`itemAmount${itemNumber}`).value
+    document.getElementById(`itemPrice${itemNumber}`).innerHTML =  `${cartArray[itemNumber].price * itemAmount}` 
+}
+
+function getTotalPrice() {
+    let totalPrice = 0
+    let i = 0
+    cartArray.forEach(item => {
+        totalPrice = totalPrice + item.price * document.getElementById(`itemAmount${i}`).value
+        i = i + 1
+    });
+    return totalPrice
 }
