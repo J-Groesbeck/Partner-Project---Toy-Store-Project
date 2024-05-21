@@ -1,37 +1,37 @@
 const productsInfo = [{
-    name: 'productname',
-    price: 1.00,
+    name: 'Wooden Airplane',
+    price: 19.99,
     image: 'product-imgs/placeholder.png',
-    description: 'productdescription',
-    ages: 'productagerange'
+    description: `Soar through imaginative skies with this classic wooden airplane. Handcrafted from sustainable Baltic birch wood with a safe, natural harvest finish and a spinning propeller. Measures 3.5"H x 7"L x 7"W.'`,
+    ages: 'Toddlers'
 },
 {
-    name: 'productname1',
-    price: 0.00,
+    name: 'Wooden Train Set',
+    price: 34.99,
     image: 'product-imgs/placeholder.png',
-    description: 'productdescription1',
-    ages: 'productagerange1'
+    description: `Embark on a charming journey with this beautiful handcrafted wooden train set. Engine and three interchangeable cars boast intricate details made from real beech wood. Large size (84cm L x 11cm H x 13cm W) with moving wheels and a fully ecological design.`,
+    ages: '3+'
 },
 {
-    name: 'productname2',
-    price: 0.00,
+    name: 'Wooden Boat',
+    price: 14.99,
     image: 'product-imgs/placeholder.png',
-    description: 'productdescription2',
-    ages: 'productagerange2'
+    description: `Set sail for bathtub adventures with this adorable wooden boat. Made from solid Maine white pine, this handcrafted toy floats and features rounded edges for safety. Includes two peg "lobster people." Size: 10.5"W x 3.5"H.`,
+    ages: 'All Ages'
 },
 {
-    name: 'productname3',
-    price: 0.00,
+    name: 'Wooden Block Set',
+    price: 99.99,
     image: 'product-imgs/placeholder.png',
-    description: 'productdescription3',
-    ages: 'productagerange3'
+    description: `Build creativity and imagination with this high-quality, 72-piece block set. Made from naturally finished and smooth-sanded hardwood blocks, this set comes in a convenient wooden storage crate (13” L x 12” W x 2” H).`,
+    ages: '3+'
 },
 {
-    name: 'productname4',
-    price: 0.00,
+    name: 'Wooden Car',
+    price: 14.99,
     image: 'product-imgs/placeholder.png',
-    description: 'productdescription4',
-    ages: 'productagerange4'
+    description: `This heirloom-quality wooden car is a timeless treasure. Handcrafted from domestic and exotic hardwoods with a clear lacquer finish, this unique car will inspire generations of imaginative play. Please note potential choking hazards for small children.`,
+    ages: 'All Ages'
 }
 ]
 
@@ -65,13 +65,22 @@ function generateProductCards() {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">${product.name}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <button class="btn btn-primary" onclick="addToCart(${i})">
-                            Add To Cart
-                        </button>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-8">
+                                    <img src="${product.image}" class="w-100">
+                                </div>
+                                <div class="col-4>
+                                    <button class="btn btn-primary w-100" onclick="addToCart(${i})">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -167,3 +176,52 @@ function getTotalPrice() {
     });
     return totalPrice
 }
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var header = document.getElementById('myHeader');
+	  var page = document.getElementById('page');
+    var openMenuButton = document.getElementById('openmenu');
+
+    window.addEventListener('scroll', function() {
+				page.classList.remove('menuopen');
+        if (window.scrollY >= 100) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
+    });
+
+    // Event listener to remove the sticky class when the button is clicked
+    openMenuButton.addEventListener('click', function() {
+        header.classList.remove('sticky');
+				page.classList.add('menuopen');
+                console.log("bruh")
+
+    });
+	
+	var links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            // Prevent the default action
+            event.preventDefault();
+
+            // Get the target element
+            var targetId = this.getAttribute('href');
+            var targetElement = document.querySelector(targetId);
+
+            // Smooth scroll to target
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+
+console.log("hello")
