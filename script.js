@@ -1,6 +1,6 @@
 const productsInfo = [{
     name: 'productname',
-    price: 0.00,
+    price: 1.00,
     image: 'product-imgs/placeholder.png',
     description: 'productdescription',
     ages: 'productagerange'
@@ -43,7 +43,7 @@ function generateProductCards() {
         card.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-1')
 
         card.innerHTML = `
-        <div class="card text-center">
+        <div class="card text-center overflow-x-hidden">
             <div class="card-header">
             ${product.name} (${product.ages})
             </div>
@@ -88,19 +88,26 @@ if (window.location.pathname.includes('products.html')) {
 
 let cartArray = []
 
+if (localStorage.getItem("cartArray")) {
+    cartArray = JSON.parse(localStorage.getItem("cartArray"))
+}
+
 function addToCart(productNumber) {
     if (!(cartArray.includes(productsInfo[productNumber]))) {
         cartArray.push(productsInfo[productNumber])
     }
+    localStorage.setItem("cartArray", JSON.stringify(cartArray))
 }
 
 function removeFromCart(cartNumber) {
     cartArray.splice(cartNumber, 1)
+    localStorage.setItem("cartArray", JSON.stringify(cartArray))
+    displayCart()
 }
 
 let cartContainer = document.getElementById('cart')
 
-function openCart() {
+function displayCart() {
     cartContainer.innerHTML = ''
     let i = 0
     cartArray.forEach(item => {
@@ -114,24 +121,24 @@ function openCart() {
                 <div class="col-12">
                    <h5 class="card-title">${item.name}</h5>
                 </div>
-                <div class="col-6>
-                <label for="item-count${i}">How Many:</label>
-                <select name="item-count${i} id="itemAmount${i}" onchange="updatePrice(${i})">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                </select>
+                <div class="col-6">
+                    <label for="item-count${i}">How Many:</label>
+                    <select name="item-count${i}" id="itemAmount${i}" onchange="updatePrice(${i})">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
                 </div>
-                <div class="col-6>
+                <div class="col-6">
                    <p id="itemPrice${i}" class="card-text">$${item.price}</p>
                 </div>
-                <a onclick="removeFromCart(${i})" class="btn btn-primary">Go somewhere</a>
+                <a onclick="removeFromCart(${i})" class="btn btn-primary">Remove from Cart</a>
             </div>
         </div>
         `
@@ -140,12 +147,15 @@ function openCart() {
         i = i + 1
     });
     const totalPrice = document.createElement('p')
+    totalPrice.setAttribute("id", `totalPrice`)
     totalPrice.innerHTML = `Total: $${getTotalPrice()}`
+    cartContainer.appendChild(totalPrice)
 }
 
 function updatePrice(itemNumber) {
     let itemAmount = document.getElementById(`itemAmount${itemNumber}`).value
-    document.getElementById(`itemPrice${itemNumber}`).innerHTML =  `${cartArray[itemNumber].price * itemAmount}` 
+    document.getElementById(`itemPrice${itemNumber}`).innerHTML =  `$${cartArray[itemNumber].price * itemAmount}`
+    totalPrice.innerHTML = `Total: $${getTotalPrice()}` 
 }
 
 function getTotalPrice() {
