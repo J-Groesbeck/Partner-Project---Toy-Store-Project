@@ -4,6 +4,34 @@ const productsInfo = [{
     image: 'product-imgs/placeholder.png',
     description: 'productdescription',
     ages: 'productagerange'
+},
+{
+    name: 'productname1',
+    price: 0.00,
+    image: 'product-imgs/placeholder.png',
+    description: 'productdescription1',
+    ages: 'productagerange1'
+},
+{
+    name: 'productname2',
+    price: 0.00,
+    image: 'product-imgs/placeholder.png',
+    description: 'productdescription2',
+    ages: 'productagerange2'
+},
+{
+    name: 'productname3',
+    price: 0.00,
+    image: 'product-imgs/placeholder.png',
+    description: 'productdescription3',
+    ages: 'productagerange3'
+},
+{
+    name: 'productname4',
+    price: 0.00,
+    image: 'product-imgs/placeholder.png',
+    description: 'productdescription4',
+    ages: 'productagerange4'
 }
 ]
 
@@ -41,7 +69,9 @@ function generateProductCards() {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    ...
+                        <button class="btn btn-primary" onclick="addToCart(${i})">
+                            Add To Cart
+                        </button>
                     </div>
                 </div>
             </div>
@@ -52,4 +82,22 @@ function generateProductCards() {
     });
 }
 
-generateProductCards()
+if (window.location.pathname.includes('products.html')) {
+    generateProductCards()
+}
+
+let cartArray = []
+
+function addToCart(productNumber) {
+    cartArray.push(productsInfo[productNumber])
+}
+
+let cartContainer = document.getElementById('cart')
+
+function openCart() {
+    cartContainer.innerHTML = ''
+    cartArray.forEach(item => {
+        cartContainer.innerHTML = `
+        `
+    });
+}
