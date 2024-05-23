@@ -43,7 +43,7 @@ function generateProductCards() {
         card.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-1')
 
         card.innerHTML = `
-        <div id="card${i}" class="card text-center overflow-x-hidden h-100">
+        <div class="card text-center overflow-x-hidden h-100">
             <div class="card-header">
             ${product.name} (${product.ages})
             </div>

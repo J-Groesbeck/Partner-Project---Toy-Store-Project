@@ -2,64 +2,12 @@
 <html lang="de-DE" prefix="og: https://ogp.me/ns#" class="sr">
 
 <head>
-
+    <title>Main</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-
-    <link rel="shortcut icon" href="https://wyld.studio/wp-content/uploads/2023/10/favicon.ico">
-
-    <link rel="preload" type="font/woff2" as="font"
-        href="https://wyld.studio/wp-content/uploads/2023/09/mona-sans-light.woff2" crossorigin="">
-    <link rel="preload" type="font/woff2" as="font"
-        href="https://wyld.studio/wp-content/uploads/2023/09/mona-sans-black.woff2" crossorigin="">
-    <link rel="preload" type="font/woff2" as="font"
-        href="https://wyld.studio/wp-content/themes/kreation/fonts/boxicons.woff2" crossorigin="">
-
-    <style>
-        @font-face {
-            font-family: 'WYLD. Font';
-            src: url('https://wyld.studio/wp-content/uploads/2023/09/mona-sans-light.woff2');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'WYLD. Font';
-            src: url('https://wyld.studio/wp-content/uploads/2023/09/mona-sans-black.woff2');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        :root,
-        :before,
-        :after {
 
 
-
-
-
-
-
-
-            --gridgutter: 25px;
-            --gridgutter_n: -25px;
-            --gridgutter_small: 12.5px;
-            --gridgutter_small_n: -12.5px;
-
-
-
-            --footer_padding_top: 25px;
-            --fontsize_menu: 15px;
-            --fontsize_desktop: 62.5%;
-            --fontsize_xxldesktop: 70%;
-            --fontsize_mobile: 56%;
-        }
-    </style>
-
-
+    <link rel="stylesheet" href="style.css">
     <!-- bootstrap css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
@@ -68,25 +16,9 @@
     <link data-minify="1" rel="stylesheet" id="style_child-css"
         href="https://wyld.studio/wp-content/cache/min/1/wp-content/themes/wyld-child/style.css?ver=1696255468"
         media="all">
-    <link data-minify="1" rel="stylesheet" id="style-css"
-        href="https://wyld.studio/wp-content/cache/min/1/wp-content/themes/kreation/style.css?ver=1696255468"
-        media="all">
-    <script src="https://wyld.studio/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 
-    <script src="https://wyld.studio/wp-content/themes/kreation/js/scrollreveal-min.js?ver=8.59"
-        id="scrollreveal-js"></script>
-    <link rel="https://api.w.org/" href="https://wyld.studio/wp-json/">
-    <link rel="alternate" type="application/json" href="https://wyld.studio/wp-json/wp/v2/pages/8">
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wyld.studio/xmlrpc.php?rsd">
-    <link rel="alternate" type="application/json+oembed"
-        href="https://wyld.studio/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwyld.studio%2F">
-    <link rel="alternate" type="text/xml+oembed"
-        href="https://wyld.studio/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwyld.studio%2F&amp;format=xml">
-    <link rel="icon" href="https://wyld.studio/wp-content/uploads/2023/10/cropped-wyld-fav-32x32.png" sizes="32x32">
-    <link rel="icon" href="https://wyld.studio/wp-content/uploads/2023/10/cropped-wyld-fav-192x192.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="https://wyld.studio/wp-content/uploads/2023/10/cropped-wyld-fav-180x180.png">
-    <meta name="msapplication-TileImage"
-        content="https://wyld.studio/wp-content/uploads/2023/10/cropped-wyld-fav-270x270.png">
+    <script src="https://wyld.studio/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body
@@ -94,16 +26,16 @@
     style="height: 100%;">
 
 
-    <header id="myHeader" class="">
-        <!--ADD LOGO HERE MAKE SURE IT HAS ID LOGO--> <img id="logo" src="main-imgs/logo.png">
+    <header id="myHeader">
+        <img id="logo" src="main-imgs/logo.png">
 
         <nav>
             <!--NAV ITEMS BELOW-->
             <a class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item"
                 href="index.html">Home</a>
-            <a class=" menu-item menu-item-type-post_type menu-item-object-page"
+            <a class=" menu-item menu-item-type-post_type menu-item-object-page pointer"
                 onclick="document.getElementById('about').scrollIntoView()">About Us</a>
-            <a class=" menu-item menu-item-type-post_type menu-item-object-page"
+            <a class=" menu-item menu-item-type-post_type menu-item-object-page pointer"
                 onclick="document.getElementById('contact').scrollIntoView()">Contact</a>
             <a class=" menu-item menu-item-type-post_type menu-item-object-page" href="products.html">Products</a>
             <button id="openmenu">
@@ -113,31 +45,31 @@
         </nav>
     </header>
 
-    <div id="pageinner" class="">
-        <div id="wyldhero" class="wyldhero">
-            <button id="volume"><i class="bx bx-volume-full"></i></button>
+    <div id="pageinner" class="container margin-top">
+        <!-- PUT PAGE CONTENT HERE -->
+        <button id="volume"><i class="bx bx-volume-full"></i></button>
 
-            <div id="paraaa"
-                style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
-                <div class="mapwrap" data-depth="0.6"
-                    style="transform: translate3d(8.7px, 52.3px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
-                    <!--?xml version="1.0" encoding="utf-8"?-->
-                    <!-- Generator: Adobe Illustrator 27.9.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <div id="paraaa"
+            style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
+            <div class="mapwrap" data-depth="0.6"
+                style="transform: translate3d(8.7px, 52.3px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+                <!--?xml version="1.0" encoding="utf-8"?-->
+                <!-- Generator: Adobe Illustrator 27.9.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 
-                </div>
-                <!-->this stuff is the animation for nav <-->
-                <div class="mapwrap" data-depth="0.2"
-                    style="transform: translate3d(2.9px, 17.4px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
-                    <svg data-depth="0.2" id="map2svg_g" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1200 800"
-                        style="enable-background:new 0 0 1200 800;" xml:space="preserve">
+            </div>
+            <!-->this stuff is the animation for nav <-->
+            <div class="mapwrap" data-depth="0.2"
+                style="transform: translate3d(2.9px, 17.4px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                <svg data-depth="0.2" id="map2svg_g" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1200 800"
+                    style="enable-background:new 0 0 1200 800;" xml:space="preserve">
 
 
 
-                        <div id="heroback"></div>
-                </div>
+                    <div id="heroback"></div>
             </div>
         </div>
+
 
 
 
@@ -180,4 +112,5 @@
     <script src="https://wyld.studio/wp-content/themes/wyld-child/js/min/scripts-footer-min.js?ver=1"
         id="scripts-wyld-js"></script>
 </body>
+
 </html>

@@ -25,7 +25,10 @@
 
 
 
-    
+    --gridgutter: 25px;
+    --gridgutter_n: -25px;
+    --gridgutter_small: 12.5px;
+    --gridgutter_small_n: -12.5px;
 
 
 
@@ -40,6 +43,10 @@
     width: 100% !important;
 }
 
-.modal {
+.modal, .margin-top {
     margin-top: 15rem;
+}
+
+.pointer {
+    cursor: pointer;
 }
