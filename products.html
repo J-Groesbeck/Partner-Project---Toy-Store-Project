@@ -13,9 +13,15 @@
         href="https://wyld.studio/wp-content/cache/min/1/wp-content/themes/wyld-child/style.css?ver=1696255468"
         media="all">
     <script src="https://wyld.studio/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body class="overflow-x-hidden">
+    <div id="cartIcons" class="cart-icon sticky-top pt-4 ps-1">
+        <i id="openCartIcon" class="fa-solid fa-cart-shopping fa-2xl pointer" onclick="displayCart()"></i>
+        <i id="closeCartIcon" class="fa-regular fa-rectangle-xmark fa-2xl d-none pointer" onclick="closeCart()"></i>
+    </div>
+    <div id="cart" class="sticky-top d-none retract-anim"></div>
     <header id="myHeader">
         <img id="logo" src="main-imgs/logo.png" alt="Logo">
         <nav>
@@ -40,10 +46,7 @@
                 <div class="mapwrap" data-depth="0.6"
                     style="transform: translate3d(8.7px, 52.3px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
                     <!--?xml version="1.0" encoding="utf-8"?-->
-                    <!-- Generator: Adobe Illustrator 27.9.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
                 </div>
-                <!-->this stuff is the animation for nav <-->
                 <div class="mapwrap" data-depth="0.2"
                     style="transform: translate3d(2.9px, 17.4px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
                     <svg data-depth="0.2" id="map2svg_g" version="1.1" xmlns="http://www.w3.org/2000/svg"

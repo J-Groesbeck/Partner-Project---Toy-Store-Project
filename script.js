@@ -125,6 +125,12 @@ function removeFromCart(cartNumber) {
 let cartContainer = document.getElementById('cart')
 
 function displayCart() {
+    document.getElementById('openCartIcon').classList.toggle('d-none')
+    document.getElementById('closeCartIcon').classList.toggle('d-none')
+    document.getElementById('cartIcons').classList = 'cart-icon sticky-top pt-4 ps-2 pointer'
+    cartContainer.classList.toggle('d-none')
+    cartContainer.classList.toggle('expansion-anim')
+    cartContainer.classList.toggle('retract-anim')
     cartContainer.innerHTML = ''
     let i = 0
     cartArray.forEach(item => {
@@ -183,4 +189,15 @@ function getTotalPrice() {
         i = i + 1
     });
     return totalPrice
+}
+
+function closeCart() {
+    document.getElementById('openCartIcon').classList.toggle('d-none')
+    document.getElementById('closeCartIcon').classList.toggle('d-none')
+    document.getElementById('cartIcons').classList = 'cart-icon sticky-top pt-4 ps-1 pointer'
+    cartContainer.classList.toggle('expansion-anim')
+    cartContainer.classList.toggle('retract-anim')
+    setTimeout(() => {
+        cartContainer.classList.toggle('d-none')
+    }, 1000);
 }
