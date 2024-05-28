@@ -144,6 +144,7 @@ function displayCart() {
     cartContainer.innerHTML = '';
     let i = 0;
     cartArray.forEach(item => {
+        if (!item.count) item.count = 1;  // Ensure count is always set
         const card = document.createElement('div');
         card.classList.add('col-12', 'mb-1');
 
@@ -169,7 +170,7 @@ function displayCart() {
         `;
 
         cartContainer.appendChild(card);
-        i = i + 1;
+        i += 1;
     });
     const totalPrice = document.createElement('p');
     totalPrice.setAttribute("id", `totalPrice`);
@@ -180,15 +181,15 @@ function displayCart() {
 function updatePrice(itemNumber) {
     let itemAmount = document.getElementById(`itemAmount${itemNumber}`).value;
     cartArray[itemNumber].count = parseInt(itemAmount);
-    document.getElementById(`itemPrice${itemNumber}`).innerHTML = `$${(cartArray[itemNumber].price * itemAmount).toFixed(2)}`;
+    document.getElementById(`itemPrice${itemNumber}`).innerHTML = `$${(cartArray[itemNumber].price * cartArray[itemNumber].count).toFixed(2)}`;
     localStorage.setItem("cartArray", JSON.stringify(cartArray));
     document.getElementById('totalPrice').innerHTML = `Total: $${getTotalPrice()}`;
 }
 
 function getTotalPrice() {
     let totalPrice = 0;
-    cartArray.forEach((item, index) => {
-        totalPrice += item.price * item.count;
+    cartArray.forEach(item => {
+        totalPrice += item.price * (item.count || 1);
     });
     return totalPrice.toFixed(2);
 }
