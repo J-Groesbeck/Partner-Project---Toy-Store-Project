@@ -71,13 +71,13 @@ function generateProductCards() {
                     <div class="modal-body">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-12 col-lg-8">
                                     <img src="${product.image}" class="w-100">
                                 </div>
-                                <div class="col-4">
+                                <div class="col-12 col-lg-4">
                                     <div class="row">
                                         <div class="col-12 text-end">
-                                            <h3 class="mb-0">${product.name}<br>$${product.price}</h3>
+                                            <h3 class="mb-0">${product.name}<br>$${product.price.toFixed(2)}</h3>
                                         </div>
                                         <div class="col-12 my-2">
                                             <button class="btn btn-primary w-100" onclick="addToCart(${i})">Add To Cart</button>
@@ -110,94 +110,96 @@ if (localStorage.getItem("cartArray")) {
 }
 
 function addToCart(productNumber) {
-    if (!(cartArray.includes(productsInfo[productNumber]))) {
-        cartArray.push(productsInfo[productNumber])
+    const productToAdd = productsInfo[productNumber];
+    const itemIndex = cartArray.findIndex(item => item.name === productToAdd.name);
+    if (itemIndex !== -1) {
+        cartArray[itemIndex].count += 1;
+    } else {
+        productToAdd.count = 1;
+        cartArray.push(productToAdd);
     }
-    localStorage.setItem("cartArray", JSON.stringify(cartArray))
+    localStorage.setItem("cartArray", JSON.stringify(cartArray));
+    displayCart();
 }
 
 function removeFromCart(cartNumber) {
-    cartArray.splice(cartNumber, 1)
-    localStorage.setItem("cartArray", JSON.stringify(cartArray))
-    displayCart()
+    cartArray.splice(cartNumber, 1);
+    localStorage.setItem("cartArray", JSON.stringify(cartArray));
+    displayCart();
 }
 
-let cartContainer = document.getElementById('cart')
+let cartContainer = document.getElementById('cart');
+
+function openCart() {
+    document.getElementById('openCartIcon').classList.toggle('d-none');
+    document.getElementById('closeCartIcon').classList.toggle('d-none');
+    document.getElementById('cartIcons').classList = 'cart-icon sticky-top pt-4 ps-2 cart-icon-left';
+    cartContainer.classList.toggle('d-none');
+    cartContainer.classList.toggle('expansion-anim');
+    cartContainer.classList.toggle('retract-anim');
+    displayCart();
+}
 
 function displayCart() {
-    document.getElementById('openCartIcon').classList.toggle('d-none')
-    document.getElementById('closeCartIcon').classList.toggle('d-none')
-    document.getElementById('cartIcons').classList = 'cart-icon sticky-top pt-4 ps-2 pointer'
-    cartContainer.classList.toggle('d-none')
-    cartContainer.classList.toggle('expansion-anim')
-    cartContainer.classList.toggle('retract-anim')
-    cartContainer.innerHTML = ''
-    let i = 0
+    cartContainer.innerHTML = '';
+    let i = 0;
     cartArray.forEach(item => {
-        const card = document.createElement('div')
-        card.classList.add('col-12', 'mb-1')
+        const card = document.createElement('div');
+        card.classList.add('col-12', 'mb-1');
 
         card.innerHTML = `
-        <div class="card" style="width: 18rem;">
+        <div class="card py-1" style="width: 18rem;">
             <img src="${item.image}" class="card-img-top">
-            <div class="card-body row">
+            <div class="card-body row pb-0">
                 <div class="col-12">
                    <h5 class="card-title">${item.name}</h5>
                 </div>
-                <div class="col-6">
-                    <label for="item-count${i}">How Many:</label>
+                <div class="col-6 mb-1">
+                    <label>Count:</label>
                     <select name="item-count${i}" id="itemAmount${i}" onchange="updatePrice(${i})">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
+                      ${[...Array(9).keys()].map(n => `<option value="${n + 1}" ${item.count === (n + 1) ? 'selected' : ''}>${n + 1}</option>`).join('')}
                     </select>
                 </div>
                 <div class="col-6">
-                   <p id="itemPrice${i}" class="card-text">$${item.price}</p>
+                   <p id="itemPrice${i}" class="card-text">$${(item.price * item.count).toFixed(2)}</p>
                 </div>
-                <a onclick="removeFromCart(${i})" class="btn btn-primary">Remove from Cart</a>
+                <a onclick="removeFromCart(${i})" class="btn btn-primary mb-0">Remove from Cart</a>
             </div>
         </div>
-        `
+        `;
 
-        cartContainer.appendChild(card)
-        i = i + 1
+        cartContainer.appendChild(card);
+        i = i + 1;
     });
-    const totalPrice = document.createElement('p')
-    totalPrice.setAttribute("id", `totalPrice`)
-    totalPrice.innerHTML = `Total: $${getTotalPrice()}`
-    cartContainer.appendChild(totalPrice)
+    const totalPrice = document.createElement('p');
+    totalPrice.setAttribute("id", `totalPrice`);
+    totalPrice.innerHTML = `Total: $${getTotalPrice()}`;
+    cartContainer.appendChild(totalPrice);
 }
 
 function updatePrice(itemNumber) {
-    let itemAmount = document.getElementById(`itemAmount${itemNumber}`).value
-    document.getElementById(`itemPrice${itemNumber}`).innerHTML = `$${cartArray[itemNumber].price * itemAmount}`
-    totalPrice.innerHTML = `Total: $${getTotalPrice()}`
+    let itemAmount = document.getElementById(`itemAmount${itemNumber}`).value;
+    cartArray[itemNumber].count = parseInt(itemAmount);
+    document.getElementById(`itemPrice${itemNumber}`).innerHTML = `$${(cartArray[itemNumber].price * itemAmount).toFixed(2)}`;
+    localStorage.setItem("cartArray", JSON.stringify(cartArray));
+    document.getElementById('totalPrice').innerHTML = `Total: $${getTotalPrice()}`;
 }
 
 function getTotalPrice() {
-    let totalPrice = 0
-    let i = 0
-    cartArray.forEach(item => {
-        totalPrice = totalPrice + item.price * document.getElementById(`itemAmount${i}`).value
-        i = i + 1
+    let totalPrice = 0;
+    cartArray.forEach((item, index) => {
+        totalPrice += item.price * item.count;
     });
-    return totalPrice
+    return totalPrice.toFixed(2);
 }
 
 function closeCart() {
-    document.getElementById('openCartIcon').classList.toggle('d-none')
-    document.getElementById('closeCartIcon').classList.toggle('d-none')
-    document.getElementById('cartIcons').classList = 'cart-icon sticky-top pt-4 ps-1 pointer'
-    cartContainer.classList.toggle('expansion-anim')
-    cartContainer.classList.toggle('retract-anim')
+    document.getElementById('openCartIcon').classList.toggle('d-none');
+    document.getElementById('closeCartIcon').classList.toggle('d-none');
+    document.getElementById('cartIcons').classList = 'cart-icon sticky-top pt-4 ps-1 cart-icon-right';
+    cartContainer.classList.toggle('expansion-anim');
+    cartContainer.classList.toggle('retract-anim');
     setTimeout(() => {
-        cartContainer.classList.toggle('d-none')
+        cartContainer.classList.toggle('d-none');
     }, 1000);
 }

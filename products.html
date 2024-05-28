@@ -17,11 +17,11 @@
 </head>
 
 <body class="overflow-x-hidden">
-    <div id="cartIcons" class="cart-icon sticky-top pt-4 ps-1">
-        <i id="openCartIcon" class="fa-solid fa-cart-shopping fa-2xl pointer" onclick="displayCart()"></i>
+    <div id="cartIcons" class="cart-icon pt-4 ps-1">
+        <i id="openCartIcon" class="fa-solid fa-cart-shopping fa-2xl pointer" onclick="openCart()"></i>
         <i id="closeCartIcon" class="fa-regular fa-rectangle-xmark fa-2xl d-none pointer" onclick="closeCart()"></i>
     </div>
-    <div id="cart" class="sticky-top d-none retract-anim"></div>
+    <div id="cart" class="d-none retract-anim overflow-y-scroll overflow-x-hidden text-center"></div>
     <header id="myHeader">
         <img id="logo" src="main-imgs/logo.png" alt="Logo">
         <nav>

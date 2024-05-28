@@ -21,21 +21,10 @@
 :root,
 :before,
 :after {
-
-
-
-
-
-
-
-
     --gridgutter: 25px;
     --gridgutter_n: -25px;
     --gridgutter_small: 12.5px;
     --gridgutter_small_n: -12.5px;
-
-
-
     --footer_padding_top: 25px;
     --fontsize_menu: 15px;
     --fontsize_desktop: 62.5%;
@@ -43,36 +32,27 @@
     --fontsize_mobile: 56%;
 }
 
-.card {
-    width: 100% !important;
-}
-
 .modal, .margin-top {
-    margin-top: 12rem;
+    margin-top: 15rem;
 }
 
 .pointer {
     cursor: pointer;
 }
 
-.cart-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 0px 0px 0px 10px;
-    background-color: blue;
-    top: 0;
-    left: 100%;
-}
-
 #cart {
+    position: fixed;
+    padding: 1rem;
     top: 0;
-    left: 100%;
+    right: 0;
     height: 100%;
     width: 20rem;
+    background-color: blue;
+    z-index: 9;
 }
 
 .expansion-anim {
-    animation: expandAnimation 1s ease;
+    animation: expandAnimation 1s ease forwards;
 }
 
 @keyframes expandAnimation {
@@ -85,7 +65,7 @@
 }
 
 .retract-anim {
-    animation: retractAnimation 1s ease;
+    animation: retractAnimation 1s ease forwards;
 }
 
 @keyframes retractAnimation {
@@ -94,5 +74,42 @@
     }
     to {
         transform: translateX(100%)
+    }
+}
+
+.cart-icon {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 0px 0px 0px 10px;
+    background-color: blue;
+    top: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.cart-icon-left {
+    animation: moveLeft 1s ease forwards;
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-20rem);
+    }
+}
+
+.cart-icon-right {
+    animation: moveRight 1s ease forwards;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-20rem);
+    }
+    to {
+        transform: translateX(0%);
     }
 }
