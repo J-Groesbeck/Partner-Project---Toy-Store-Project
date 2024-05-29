@@ -32,8 +32,12 @@
     --fontsize_mobile: 56%;
 }
 
-.modal, .margin-top {
+.margin-top {
     margin-top: 15rem;
+}
+
+.modal {
+    z-index: 99999;
 }
 
 .pointer {
