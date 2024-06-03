@@ -32,6 +32,13 @@ const productsInfo = [{
     image: 'product-imgs/car1.png',
     description: `This heirloom-quality wooden car is a timeless treasure. Handcrafted from domestic and exotic hardwoods with a clear lacquer finish, this unique car will inspire generations of imaginative play. Please note potential choking hazards for small children.`,
     ages: 'All Ages'
+},
+{
+    name: 'Wooden Dog',
+    price: 24.99,
+    image: 'product-imgs/dog1.png',
+    description: `Lovingly handcrafted from natural materials, the Pull Toy Dog is a safe, durable and colorful friend for your toddler. Classic and timeless, this little wooden playmate makes the perfect addition to any little one’s toy collection. And did we mention that it drives like a dream! Height 5 2/5” (13.5 cm), 6 4/5” length (17 cm)`,
+    ages: 'Toddlers'
 }
 ]
 
@@ -45,7 +52,7 @@ function generateProductCards() {
         card.innerHTML = `
         <div class="card text-center overflow-x-hidden h-100">
             <div class="card-header">
-            ${product.name} (${product.ages})
+            <h3 class="mb-0">${product.name} (${product.ages})</h3>
             </div>
             <div class="card-body">
                 <img src="${product.image}" class="w-100">
@@ -72,7 +79,7 @@ function generateProductCards() {
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12 col-lg-8">
-                                    <img src="${product.image}" class="w-100">
+                                    <img src="${product.image}" class="w-100 test">
                                 </div>
                                 <div class="col-12 col-lg-4">
                                     <div class="row">
