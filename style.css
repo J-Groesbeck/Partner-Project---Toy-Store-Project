@@ -51,13 +51,14 @@
 
 #cart {
     position: fixed;
-    padding: 1rem;
     top: 0;
     right: 0;
     height: 100%;
     width: 20rem;
     background-color: darkgray;
     z-index: 999;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .expansion-anim {
@@ -66,7 +67,7 @@
 
 @keyframes expandAnimation {
     from {
-        transform: translateX(100%)
+        transform: translateX(19rem)
     }
     to {
         transform: translateX(0%)
@@ -82,7 +83,7 @@
         transform: translateX(0%)
     }
     to {
-        transform: translateX(100%)
+        transform: translateX(19rem)
     }
 }
 
@@ -106,7 +107,7 @@
         transform: translateX(0%);
     }
     to {
-        transform: translateX(-20rem);
+        transform: translateX(-19rem);
     }
 }
 
@@ -116,7 +117,7 @@
 
 @keyframes moveRight {
     from {
-        transform: translateX(-20rem);
+        transform: translateX(-19rem);
     }
     to {
         transform: translateX(0%);

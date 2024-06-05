@@ -156,7 +156,7 @@ function displayCart() {
         card.classList.add('col-12', 'mb-1');
 
         card.innerHTML = `
-        <div class="card py-1" style="width: 18rem;">
+        <div class="card p-1" style="width: 18rem;">
             <img src="${item.image}" class="card-img-top">
             <div class="card-body row pb-0">
                 <div class="col-12">
@@ -179,10 +179,13 @@ function displayCart() {
         cartContainer.appendChild(card);
         i += 1;
     });
-    const totalPrice = document.createElement('p');
-    totalPrice.setAttribute("id", `totalPrice`);
-    totalPrice.innerHTML = `Total: $${getTotalPrice()}`;
-    cartContainer.appendChild(totalPrice);
+    const totalPriceContainer = document.createElement('div');
+    totalPriceContainer.classList = 'col-12'
+    totalPriceContainer.innerHTML = `<div class="row">
+                                        <div class="col-6">Total: $${getTotalPrice()}</div>
+                                        <div class="col-6"><a class="btn btn-primary mb-0 target="_blank">Place Order (out of stock)</a></div>
+                                    </div>`
+    cartContainer.appendChild(totalPriceContainer);
 }
 
 function updatePrice(itemNumber) {
