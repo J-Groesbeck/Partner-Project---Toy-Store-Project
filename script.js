@@ -47,27 +47,30 @@ function generateProductCards() {
     let i = 0
     productsInfo.forEach(product => {
         const card = document.createElement('div')
-        card.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-1')
+        card.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-4')
 
         card.innerHTML = `
-        <div class="card text-center overflow-x-hidden h-100">
-            <div class="card-header">
-            <h3 class="mb-0">${product.name} (${product.ages})</h3>
-            </div>
-            <div class="card-body">
-                <img src="${product.image}" class="w-100">
-            </div>
-            <div class="card-footer text-body-secondary row">
-                 <div class="col-6">
-                    $${product.price}
-                 </div>
-                 <div class="col-6">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal${i}">
-                        See More
-                    </button>
-                 </div>
-            </div>
+        <div class="card">
+      <div class="card-inner" style="--clr:#fff;">
+        <div class="box">
+          <div class="imgBox">
+            <img src="${product.image}">
+          </div>
+          <div class="icon">
+            <a type="button" data-bs-toggle="modal" data-bs-target="#modal${i}" class="iconBox"> <span class="material-symbols-outlined">
+                arrow_outward
+              </span></a>
+          </div>
         </div>
+      </div>
+      <div class="content pb-0">
+        <h3>${product.name} </h3>
+        <p class="mb-1">
+         $${product.price}   <button class="btn btn-primary float-end" onclick="addToCart(${i})">Add To Cart</button> 
+        </p>
+        
+      </div>
+    </div>
         <div class="modal fade" id="modal${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -110,17 +113,19 @@ if (window.location.pathname.includes('products.html')) {
     generateProductCards()
 }
 
-let cartArray = []
+let cartArray = [];
 
 if (localStorage.getItem("cartArray")) {
-    cartArray = JSON.parse(localStorage.getItem("cartArray"))
+    cartArray = JSON.parse(localStorage.getItem("cartArray"));
 }
 
 function addToCart(productNumber) {
     const productToAdd = productsInfo[productNumber];
     const itemIndex = cartArray.findIndex(item => item.name === productToAdd.name);
     if (itemIndex !== -1) {
-        cartArray[itemIndex].count += 1;
+        if (cartArray[itemIndex].count < 9) {
+            cartArray[itemIndex].count += 1;
+        }
     } else {
         productToAdd.count = 1;
         cartArray.push(productToAdd);
@@ -180,11 +185,11 @@ function displayCart() {
         i += 1;
     });
     const totalPriceContainer = document.createElement('div');
-    totalPriceContainer.classList = 'col-12'
+    totalPriceContainer.classList = 'col-12';
     totalPriceContainer.innerHTML = `<div class="row">
                                         <div class="col-6">Total: $${getTotalPrice()}</div>
-                                        <div class="col-6"><a class="btn btn-primary mb-0 target="_blank">Place Order (out of stock)</a></div>
-                                    </div>`
+                                        <div class="col-6"><a class="btn btn-primary mb-0" target="_blank">Place Order (out of stock)</a></div>
+                                    </div>`;
     cartContainer.appendChild(totalPriceContainer);
 }
 
