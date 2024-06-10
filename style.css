@@ -2,6 +2,14 @@
     scrollbar-width: thin;
 }
 
+.menuopen {
+  opacity: 1 !important; 
+  -webkit-filter: blur(0px) !important;
+  filter: blur(0px) !important;
+  -webkit-transform: scale(1) !important;
+  transform: scale(1) !important;
+}
+
 #pageinner, #pageinnerlight, body {
   background: white !important;
 }
@@ -212,7 +220,7 @@ header nav {
 
       p {
         margin: 0.625rem 0 1.25rem;
-        color: #d45f10;
+        color: #d45e10;
         font-size: 25px;
       }
     }
@@ -304,3 +312,19 @@ header nav {
     }
   }
 
+/* footer styling stuff */
+
+footer {
+  /* change bg color to color from nav */
+  background-color: white;
+  padding: 2rem;
+}
+
+.fa-links {
+  color: black;
+}
+
+.footer-logo-sizing {
+  height: 4rem;
+  width: auto;
+}
