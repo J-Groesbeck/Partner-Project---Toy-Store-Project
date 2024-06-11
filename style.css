@@ -51,6 +51,8 @@ header nav {
     --fontsize_desktop: 62.5%;
     --fontsize_xxldesktop: 70%;
     --fontsize_mobile: 56%;
+    --bs-border-color: #985122;
+    --bs-border-width: 2px;
 }
 
 .margin-top {
@@ -316,7 +318,7 @@ header nav {
 
 footer {
   /* change bg color to color from nav */
-  background-color: white;
+  background-color: #ff9464;
   padding: 2rem;
 }
 
