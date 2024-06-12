@@ -5,6 +5,8 @@
     <title>Main</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/syd0ozo.css">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
@@ -15,13 +17,18 @@
     <script src="https://wyld.studio/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/syd0ozo.css">
+
 </head>
 
-<body class="overflow-x-hidden whiteout">
-    <div id="cartIcons" class="cart-icon text-center pt-4">
+<body class="overflow-x-hidden">
+    <div id="cartIcons" class="cart-icon text-center pt-3">
         <i id="openCartIcon" class="fa-solid fa-cart-shopping fa-2xl pointer" onclick="openCart()"></i>
         <i id="closeCartIcon" class="fa-regular fa-rectangle-xmark fa-2xl d-none pointer" onclick="closeCart()"></i>
     </div>
+
+
+
     <div id="cart" class="d-none row retract-anim overflow-y-scroll overflow-x-hidden text-center py-2"></div>
 
     <header id="myHeader">
@@ -34,7 +41,7 @@
             <a class="menu-item menu-item-type-post_type menu-item-object-page pointer"
                 onclick="document.getElementById('about').scrollIntoView()">About Us</a>
             <a class="menu-item menu-item-type-post_type menu-item-object-page pointer"
-                onclick="document.getElementById('contact').scrollIntoView()">Contact</a>
+                onclick="document.getElementById('footer').scrollIntoView()">Contact</a>
             <a class="menu-item menu-item-type-post_type menu-item-object-page" href="products.html">Products</a>
             <button id="openmenu">
                 <span></span>
@@ -48,9 +55,12 @@
             <div class="row mb-4">
 
                 <div class="col-6 py-5">
-                    <h1 class="mb-3">BIG TEXT FOR TAGLINE THAT DRAWS THE EYE</h1>
-                    <h4>Here at Little Bird Toy Company, we believe in the power of simple, safe play. Our handcrafted
-                        toys are free from plastic and batteries, and made with sustainable Baltic birch wood. Each piece is meticulously crafted and rigorously tested in our Toms River, NJ workshop to meet the highest safety standards (ASTM & CA-Prop 65) and ensure unmatched durability.</h4>
+                    <h1 class="mb-3 bigfont">The Mission</h1>
+                    <h4 class="plswork">Here at Little Bird Toy Company, we believe in the power of simple, safe play.
+                        Our handcrafted
+                        toys are free from plastic and batteries, and made with sustainable Baltic birch wood. Each
+                        piece is meticulously crafted and rigorously tested in our Toms River, NJ workshop to meet the
+                        highest safety standards (ASTM & CA-Prop 65) and ensure unmatched durability.</h4>
                     <a href="products.html" class="btn btn-primary">See Products</a>
                 </div>
                 <div class="col-3"><img src="main-imgs/placeholder.png" class="w-100"></div>
@@ -58,37 +68,44 @@
             </div>
 
             <div id="about" class="row my-5">
-                <div class="col-3">
-                    <img src="" class="w-100">
-                    <img src="" class="w-100">
-                </div>
-                <div class="col-3">
-                    <img src="" class="w-100">
-                    <img src="" class="w-100">
-                </div>
                 <div class="col-6">
-                    <h3>Our Story</h3>
-                    <h6>Little Bird Toys, established in 2018, brings families handcrafted wooden toys designed to spark imagination and slow down playtime. Our heirloom-quality collection is built from sustainable materials and made to last a lifetime, fostering connections between generations.</h6>
+                    <img src="main-imgs/placeholder.png" class="w-100">
+                    <img src="main-imgs/placeholder.png" class="w-100">
+                </div>
+
+                <div class="col-6">
+                    <h3 class="bigfont">Our Story</h3>
+                    <h6 class="plswork">Little Bird Toys, established in 2018, brings families handcrafted wooden toys
+                        designed to spark imagination and slow down playtime. Our heirloom-quality collection is built
+                        from sustainable materials and made to last a lifetime, fostering connections between
+                        generations.</h6>
                 </div>
             </div>
 
             <div class="row mb-4 my-5">
                 <div class="col-6 py-5 mt-5">
-                    <h1 class="mb-3">Sustainability</h1>
-                    <h4>Here at Little Bird Toy Company, we believe in the power of simple, safe play. Our handcrafted toys are free from plastic and batteries, and made with sustainable Baltic birch wood. Each piece is meticulously crafted and rigorously tested in our Toms River, NJ workshop to meet the highest safety standards (ASTM & CA-Prop 65) and ensure unmatched durability.</h4>
+                    <h1 class="mb-3 bigfont">Sustainability</h1>
+                    <h4 class="plswork">Here at Little Bird Toy Company, we believe in the power of simple, safe play.
+                        Our handcrafted toys are free from plastic and batteries, and made with sustainable Baltic birch
+                        wood. Each piece is meticulously crafted and rigorously tested in our Toms River, NJ workshop to
+                        meet the highest safety standards (ASTM & CA-Prop 65) and ensure unmatched durability.</h4>
                 </div>
                 <div class="col-3"><img src="main-imgs/placeholder.png" class="w-100"></div>
                 <div class="col-3"><img src="main-imgs/placeholder.png" class="w-100"></div>
             </div>
         </div>
-    </main> 
+    </main>
     <footer id="footer" class="text-center mt-3 pb-2 pt-3">
-        <a href="" target="_blank" class="fa-links border-start border-end"><i class="fa-brands fa-facebook fa-2xl mx-2 pointer"></i></a>
-        <a href="" target="_blank" class="fa-links border-end"><i class="fa-brands fa-instagram fa-2xl mx-2 pointer"></i></a>
-        <a href="" target="_blank" class="fa-links border-end"><i class="fa-brands fa-twitter fa-2xl mx-2 pointer"></i></a>
-        <a href="" target="_blank" class="fa-links border-end"><i class="fa-brands fa-snapchat fa-2xl mx-2 pointer"></i></a>
-        <a href="https://github.com/J-Groesbeck/Partner-Project---Toy-Store-Project" target="_blank" class="fa-links border-end"><i
-                class="fa-brands fa-github fa-2xl mx-2"></i></a><br>
+        <a href="" target="_blank" class="fa-links border-start border-end"><i
+                class="fa-brands fa-facebook fa-2xl mx-2 pointer"></i></a>
+        <a href="" target="_blank" class="fa-links border-end"><i
+                class="fa-brands fa-instagram fa-2xl mx-2 pointer"></i></a>
+        <a href="" target="_blank" class="fa-links border-end"><i
+                class="fa-brands fa-twitter fa-2xl mx-2 pointer"></i></a>
+        <a href="" target="_blank" class="fa-links border-end"><i
+                class="fa-brands fa-snapchat fa-2xl mx-2 pointer"></i></a>
+        <a href="https://github.com/J-Groesbeck/Partner-Project---Toy-Store-Project" target="_blank"
+            class="fa-links border-end"><i class="fa-brands fa-github fa-2xl mx-2"></i></a><br>
         <img src="main-imgs/logo-only-text.png" class="my-2 footer-logo-sizing">
         <p class="my-0">© 2024 Little Bird Toys, Inc.</p>
     </footer>
