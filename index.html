@@ -29,6 +29,9 @@
     - custom css link
   -->
   <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 
   <!-- 
     - preload images
@@ -67,7 +70,7 @@
         </div>
 
         <span class="span">
-          Little Toy Bird ST Narnia
+          43 Main St, Toms River, NJ 08753
         </span>
       </address>
 
@@ -81,12 +84,12 @@
         <span class="span">Daily : 8.00 am to 10.00 pm</span>
       </div>
 
-      <a href="tel:+11234567890" class="topbar-item link">
+      <a href="tel:+17325551234" class="topbar-item link">
         <div class="icon">
           <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
         </div>
 
-        <span class="span">+1 123 456 7890</span>
+        <span class="span">+1 732 555 1234</span>
       </a>
 
       <div class="separator"></div>
@@ -129,13 +132,13 @@
           <li class="slider-item active" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="dc6fd7e1-3875-4694-b540-39552d39fa0d.jpg" width="1880" height="950" alt="" class="img-cover">
+              <img src="main-imgs/dc6fd7e1-3875-4694-b540-39552d39fa0d.jpg" width="1880" height="950" alt="" class="img-cover">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal">Tradational & Reliable</p>
 
             <h1 class="display-1 hero-title slider-reveal">
-             Toys you can <br>
+              Toys you can <br>
               Count on
             </h1>
 
@@ -145,6 +148,7 @@
 
             <a href="products.html" class="btn btn-primary slider-reveal">
               <span class="text text-1">View Our Products</span>
+              <span class="text text-2" aria-hidden="true">View Our Products</span>
             </a>
 
           </li>
@@ -152,13 +156,13 @@
           <li class="slider-item" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="89a3d2c6-14bf-43ec-964f-b97d3cf5901c.jpg" width="1880" height="950" alt="" class="img-cover">
+              <img src="main-imgs/89a3d2c6-14bf-43ec-964f-b97d3cf5901c.jpg" width="1880" height="950" alt="" class="img-cover">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal">delightful experience</p>
 
             <h1 class="display-1 hero-title slider-reveal">
-              Toys Built  <br>
+              Toys Built <br>
               By hand
             </h1>
 
@@ -166,8 +170,9 @@
               Handmade Toys built to provide a rich experience
             </p>
 
-            <a href="products.html" class="btn btn-primary slider-reveal">
-              <span class="text text-1">View Our products</span>
+            <a onclick="document.getElementById('about').scrollIntoView()" class="btn btn-primary slider-reveal pointer">
+              <span class="text text-1">Learn Our Story</span>
+              <span class="text text-2">Learn Our Story</span>
             </a>
 
           </li>
@@ -175,7 +180,7 @@
           <li class="slider-item" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="85d7de21-3691-4248-8fbc-2428f81f11cc.jpg" width="1880" height="950" alt="" class="img-cover">
+              <img src="main-imgs/85d7de21-3691-4248-8fbc-2428f81f11cc.jpg" width="1880" height="950" alt="" class="img-cover">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal">Amazing & Unique</p>
@@ -186,12 +191,13 @@
             </h1>
 
             <p class="body-2 hero-text slider-reveal">
-             Each toy is built to shocase a new story, A story that brings creativity and uniqueness
-             together
+              Each toy is built to shocase a new story, A story that brings creativity and uniqueness
+              together
             </p>
 
-            <a href="products.html" class="btn btn-primary slider-reveal">
-              <span class="text text-1">View Our products</span>
+            <a onclick="document.getElementById('contact').scrollIntoView()"" class="btn btn-primary slider-reveal pointer">
+              <span class="text text-1">Contact Us</span>
+              <span class="text text-2">Contact Us</span>
             </a>
 
           </li>
@@ -224,7 +230,8 @@
           <h2 class="headline-1 section-title">We Offer Top Notch</h2>
 
           <p class="section-text">
-            When you buy at Little Bird Toy Shop expect only the most premium quality of toys. Each toy is handcrafted to perfection ensuring an amazing experience for all.
+            When you buy at Little Bird Toy Shop expect only the most premium quality of toys. Each toy is handcrafted
+            to perfection ensuring an amazing experience for all.
           </p>
 
           <ul class="grid-list">
@@ -234,8 +241,7 @@
 
                 <a href="products.html" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
-                    <img src="trainmain.jpg" width="285" height="336" loading="lazy" alt="Toy 1"
-                      class="img-cover">
+                    <img src="main-imgs/trainmain.jpg" width="285" height="336" loading="lazy" alt="Toy 1" class="img-cover">
                   </figure>
                 </a>
 
@@ -257,8 +263,7 @@
 
                 <a href="products.html" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
-                    <img src="airmain.jpg" width="285" height="336" loading="lazy" alt="Toy 2"
-                      class="img-cover">
+                    <img src="main-imgs/airmain.jpg" width="285" height="336" loading="lazy" alt="Toy 2" class="img-cover">
                   </figure>
                 </a>
 
@@ -280,15 +285,14 @@
 
                 <a href="products.html" class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
-                    <img src="boatmain.jpg" width="285" height="336" loading="lazy" alt="Toy 3"
-                      class="img-cover">
+                    <img src="main-imgs/boatmain.jpg" width="285" height="336" loading="lazy" alt="Toy 3" class="img-cover">
                   </figure>
                 </a>
 
                 <div class="card-content">
 
                   <h3 class="title-4 card-title">
-                    <a href="products.html">wooden Boat</a>
+                    <a href="products.html">Wooden Boat</a>
                   </h3>
 
                   <a href="products.html" class="btn-text hover-underline label-2">View Products</a>
@@ -300,7 +304,7 @@
 
           </ul>
 
-         
+
 
         </div>
       </section>
@@ -313,7 +317,7 @@
         - #ABOUT
       -->
 
-      <section class="section about text-center" aria-labelledby="about-label" id="about">
+      <section id="about" class="section about text-center" aria-labelledby="about-label" id="about">
         <div class="container">
 
           <div class="about-content">
@@ -323,22 +327,23 @@
             <h2 class="headline-11 section-title">Every Toy Tells a Story</h2>
 
             <p class="section-text">
-                Little Bird Toys, established in 2018, brings families handcrafted wooden toys designed to spark imagination and slow down playtime. Our heirloom-quality collection is built from sustainable materials and made to last a lifetime, fostering connections between generations.
+              Little Bird Toys, established in 2018, brings families handcrafted wooden toys designed to spark
+              imagination and slow down playtime. Our heirloom-quality collection is built from sustainable materials
+              and made to last a lifetime, fostering connections between generations.
 
             </p>
 
-           
+
 
           </div>
 
           <figure class="about-banner">
 
-            <img src="product-imgs/car1.png" width="570" height="570" loading="lazy" alt="about banner"
-              class="w-100" data-parallax-item data-parallax-speed="1">
+            <img src="product-imgs/car1.png" width="570" height="570" loading="lazy" alt="about banner" class="w-100"
+              data-parallax-item data-parallax-speed="1">
 
             <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
-              <img src="product-imgs/dog1.png" width="285" height="285" loading="lazy" alt=""
-                class="w-100">
+              <img src="product-imgs/dog1.png" width="285" height="285" loading="lazy" alt="" class="w-100">
             </div>
 
             <div class="abs-img abs-img-2 has-before">
@@ -350,196 +355,6 @@
 
         </div>
       </section>
-
-
-
-
-
-      <!-- 
-        - #bestseller
-      -->
-
-      <section class="special-dish text-center" aria-labelledby="dish-label">
-
-        <div class="special-dish-banner">
-          <img src="supercar main.jpg" width="940" height="900" loading="lazy" alt="special dish"
-            class="img-cover">
-        </div>
-
-        <div class="special-dish-content orra">
-          <div class="container">
-
-          
-
-            <p class="section-subtitle label-2">Best Seller</p>
-
-            <h2 class="headline-1 section-title">Wooden SuperCar</h2>
-
-            <p class="section-text">
-              The Wooden SuperCar has been a staple at the Little Bird Shop. It has rissen to become a bestseller and continues to provide happiness to many children around the World
-            </p>
-
-            <div class="wrapper">
-              <del class="del body-3">$40.00</del>
-
-              <span class="span body-1">$16.99</span>
-            </div>
-
-            <a href="products.html" class="btn btn-primary">
-              <span class="text text-1">View All Products</span>
-
-              <span class="text text-2" aria-hidden="true">View All Products</span>
-            </a>
-
-          </div>
-        </div>
-
-       
-
-      </section>
-
-
-
-
-
-     
-
-          <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
-          <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #TESTIMONIALS
-      -->
-
-      <section class="section testi text-center has-bg-image"
-        style="background-image: url('./assets/images/testimonial-bg.jpg')" aria-label="testimonials">
-        <div class="container">
-
-          <div class="quote">”</div>
-
-          <p class="headline-2 testi-text">
-            I recently discovered Little Toy Bird, and I couldn't be more delighted with my purchase! This charming shop offers an exquisite collection of handcrafted wooden toys that are both timeless and enchanting.
-          </p>
-
-          <div class="wrapper">
-            <div class="separator"></div>
-            <div class="separator"></div>
-            <div class="separator"></div>
-          </div>
-
-          <div class="profile">
-            
-
-            <p class="label-2 profile-name">-Timothy Mcgee</p>
-          </div>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #order
-      -->
-
-      <section class="reservation">
-        <div class="container">
-
-          <div class="form reservation-form bg-black-10">
-
-            <form action="" class="form-left orra">
-
-              <h2 class="headline-1 text-center">Online Orders</h2>
-
-              <p class="form-text text-center">
-                Order request <a href="tel:+88123123456" class="link">+88-123-123456</a>
-                or fill out the order form
-              </p>
-
-              <div class="input-wrapper">
-                <input type="text" name="name" placeholder="Your Name" autocomplete="off" class="input-field">
-
-                <input type="tel" name="phone" placeholder="Phone Number" autocomplete="off" class="input-field">
-              </div>
-
-              <div class="input-wrapper">
-
-                <div class="icon-wrapper">
-                  <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-
-                  <select name="person" class="input-field">
-                    <option value="1-person">Toy 1</option>
-                    <option value="2-person">Toy 2</option>
-                    <option value="3-person">Toy 3</option>
-                    <option value="4-person">Toy 4</option>
-                    <option value="5-person">Toy 5</option>
-                    <option value="6-person">Toy 6</option>
-                   
-                  </select>
-
-                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                </div>
-
-                <div class="icon-wrapper">
-                  <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
-
-                  <input type="date" name="reservation-date" class="input-field">
-
-                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                </div>
-
-             
-
-              </div>
-
-              <textarea name="message" placeholder="Message" autocomplete="off" class="input-field"></textarea>
-
-              <button type="submit" class="btn btn-secondary">
-                <span class="text text-1">Order Now</span>
-
-                <span class="text text-2" aria-hidden="true">Order Now</span>
-              </button>
-
-            </form>
-
-            <div class="form-right text-center" style="background-image: url('./assets/images/form-pattern.png')">
-
-              <h2 class="headline-1 text-center">Contact Us</h2>
-
-              <p class="contact-label">Order Request</p>
-
-              <a href="tel:+88123123456" class="body-1 contact-number hover-underline">+88-123-123456</a>
-
-              <div class="separator"></div>
-
-              <p class="contact-label">Location</p>
-
-              <address class="body-4">
-                Litte Toy Bird St, Narnia
-              </address>
-
-             
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-
 
 
       <!-- 
@@ -559,12 +374,13 @@
               <div class="feature-card">
 
                 <div class="card-icon">
-                  <img src="quality.jpg" width="100" height="80" loading="lazy" alt="icon">
+                  <img src="main-imgs/quality.jpg" width="100" height="80" loading="lazy" alt="icon">
                 </div>
 
                 <h3 class="title-22 card-title">Quality</h3>
 
-                <p class="label-1 card-text">We believe in the power of simple, safe play. Our handcrafted toys are free from plastic and batteries, and made with sustainable Baltic birch wood</p>
+                <p class="label-1 card-text">We believe in the power of simple, safe play. Our handcrafted toys are free
+                  from plastic and batteries, and made with sustainable Baltic birch wood</p>
 
               </div>
             </li>
@@ -573,12 +389,14 @@
               <div class="feature-card orra">
 
                 <div class="card-icon">
-                  <img src="eco friendly.jpg" width="100" height="80" loading="lazy" alt="icon">
+                  <img src="main-imgs/eco friendly.jpg" width="100" height="80" loading="lazy" alt="icon">
                 </div>
 
                 <h3 class="title-22 card-title">Eco-Friendly</h3>
 
-                <p class="label-1 card-text">At Little Bird Toys, we are committed to eco-friendly practices. Our wooden toys are designed for longevity, and our manufacturing process minimizes waste and supports the US economy.
+                <p class="label-1 card-text">At Little Bird Toys, we are committed to eco-friendly practices. Our wooden
+                  toys are designed for longevity, and our manufacturing process minimizes waste and supports the US
+                  economy.
                 </p>
 
               </div>
@@ -588,12 +406,14 @@
               <div class="feature-card orra">
 
                 <div class="card-icon">
-                  <img src="creative.jpg" width="100" height="80" loading="lazy" alt="icon">
+                  <img src="main-imgs/creative.jpg" width="100" height="80" loading="lazy" alt="icon">
                 </div>
 
                 <h3 class="title-22 card-title">Creative</h3>
 
-                <p class="label-1 card-text">Little Toy Bird's toys are designed to inspire imaginative and creative play. Free from batteries and screens, these toys encourage children to engage their creativity, develop motor skills, and enjoy endless hours of open-ended play.
+                <p class="label-1 card-text">Little Toy Bird's toys are designed to inspire imaginative and creative
+                  play. Free from batteries and screens, these toys encourage children to engage their creativity,
+                  develop motor skills, and enjoy endless hours of open-ended play.
 
                 </p>
 
@@ -604,20 +424,22 @@
               <div class="feature-card">
 
                 <div class="card-icon">
-                  <img src="unique.jpg" width="100" height="80" loading="lazy" alt="icon">
+                  <img src="main-imgs/unique.jpg" width="100" height="80" loading="lazy" alt="icon">
                 </div>
 
                 <h3 class="title-22 card-title">Unique</h3>
 
-                <p class="label-1 card-text"> Little Toy Bird prides itself on offering beautifully handcrafted wooden toys made with attention to detail and superior craftsmanship. Each toy is meticulously designed and built to last, providing children with durable, high-quality playthings.</p>
+                <p class="label-1 card-text"> Little Toy Bird prides itself on offering beautifully handcrafted wooden
+                  toys made with attention to detail and superior craftsmanship. Each toy is meticulously designed and
+                  built to last, providing children with durable, high-quality playthings.</p>
 
               </div>
             </li>
 
           </ul>
 
-         
-          
+
+
         </div>
       </section>
 
@@ -629,8 +451,201 @@
         - #EVENT
       -->
 
-    
+
   </main>
+
+
+
+
+  <!-- 
+        - #bestseller
+      -->
+
+  <section class="special-dish text-center" aria-labelledby="dish-label">
+
+    <div class="special-dish-banner">
+      <img src="main-imgs/supercar main.jpg" width="940" height="900" loading="lazy" alt="special dish" class="img-cover">
+    </div>
+
+    <div class="special-dish-content orra">
+      <div class="container">
+
+
+
+        <p class="section-subtitle label-2">Best Seller</p>
+
+        <h2 class="headline-1 section-title">Wooden SuperCar</h2>
+
+        <p class="section-text">
+          The Wooden SuperCar has been a staple at the Little Bird Shop. It has rissen to become a bestseller and
+          continues to provide happiness to many children around the world.<br><b>Only Available For Purchase In Person</b>
+        </p>
+
+        <div class="wrapper">
+          <span class="span body-1">$19.99</span>
+        </div>
+
+        <a href="products.html" class="btn btn-primary">
+          <span class="text text-1">View Other Products</span>
+
+          <span class="text text-2" aria-hidden="true">View Other Products</span>
+        </a>
+
+      </div>
+    </div>
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
+    class="shape shape-2 move-anim">
+  <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
+    class="shape shape-3 move-anim">
+
+  </div>
+  </section>
+
+
+
+
+
+  <!-- 
+        - #TESTIMONIALS
+      -->
+
+  <section class="section testi text-center has-bg-image"
+    style="background-image: url('./assets/images/testimonial-bg.jpg')" aria-label="testimonials">
+    <div class="container">
+
+      <div class="quote">”</div>
+
+      <p class="headline-2 testi-text">
+        I recently discovered Little Toy Bird, and I couldn't be more delighted with my purchase! This charming shop
+        offers an exquisite collection of handcrafted wooden toys that are both timeless and enchanting.
+      </p>
+
+      <div class="wrapper">
+        <div class="separator"></div>
+        <div class="separator"></div>
+        <div class="separator"></div>
+      </div>
+
+      <div class="profile">
+
+
+        <p class="label-2 profile-name">-Timothy Mcgee</p>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+  <!-- 
+        - #order
+      -->
+
+  <section id="contact" class="reservation">
+    <div class="container">
+
+      <div class="form reservation-form bg-black-10">
+
+        <form action="" class="form-left orra">
+
+          <h2 class="headline-1 text-center">Bulk Orders</h2>
+
+          <p class="form-text text-center">
+            Order request <a href="tel:+17325551234" class="link">+1 732 555 1234</a>
+            or fill out the order form. Include amount in your message.<br>For smaller orders see our products page.
+          </p>
+
+          <div class="input-wrapper">
+            <input type="text" name="name" placeholder="Your Name" autocomplete="off" class="input-field">
+
+            <input type="tel" name="phone" placeholder="Phone Number" autocomplete="off" class="input-field">
+          </div>
+
+          <div class="input-wrapper">
+
+            <div class="icon-wrapper">
+              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+              <select name="person" class="input-field">
+                <option value="1-person">Wooden Airplane</option>
+                <option value="2-person">Wooden Train Set</option>
+                <option value="3-person">Wooden Boat</option>
+                <option value="4-person">Wooden Block Set</option>
+                <option value="5-person">Wooden Car</option>
+                <option value="6-person">Wooden Dog</option>
+
+              </select>
+
+              <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+            </div>
+
+            <div class="icon-wrapper">
+              <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
+
+              <input type="date" name="reservation-date" class="input-field">
+
+              <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+            </div>
+
+
+
+          </div>
+
+          <textarea name="message" placeholder="Message" autocomplete="off" class="input-field"></textarea>
+
+          <button type="submit" class="btn btn-secondary">
+            <span class="text text-1">Order Now</span>
+
+            <span class="text text-2" aria-hidden="true">Order Now</span>
+          </button>
+
+        </form>
+
+        <div class="form-right text-center" style="background-image: url('./assets/images/form-pattern.png')">
+
+          <h2 class="headline-1 text-center">Contact Us</h2>
+
+          <p class="contact-label">Order Request</p>
+
+          <a href="tel:+17325551234" class="body-1 contact-number hover-underline">+1 732 555 1234</a>
+
+          <div class="separator"></div>
+
+          <p class="contact-label">Location</p>
+
+          <address class="body-4">
+            43 Main St, Toms River, NJ 08753
+          </address>
+
+          <p style="color: white;">Become part of the Little Bird Toys family! We love interacting with our customers and sharing the joy of our handcrafted toys. Visit our Toms River, NJ store to explore our charming play space and meet the team behind the magic.</p>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
 
 
 
@@ -640,108 +655,19 @@
     - #FOOTER
   -->
 
-  <footer class="footer section has-bg-image text-center"
-    style="background-image: url('./assets/images/footer-bg.jpg')">
-    <div class="container">
-
-      <div class="footer-top grid-list">
-
-        <div class="footer-brand has-before has-after">
-
-          <a href="#" class="logo">
-            <img src="main-imgs/logo&text.png" width="160" height="50" loading="lazy" alt="grilli home">
-          </a>
-
-          <address class="body-4">
-            Little Toy Bird ST Narnia
-          </address>
-
-          <a href="mailto:booking@grilli.com" class="body-4 contact-link">LittlyToyBird@Shop.com</a>
-
-          <a href="tel:+88123123456" class="body-4 contact-link">Order Request : +88-123-123456</a>
-          <div class="wrapper">
-            <div class="separator"></div>
-            <div class="separator"></div>
-            <div class="separator"></div>
-          </div>
-
-          <p class="title-1">Get News & Offers</p>
-
-          <p class="label-1">
-            Subscribe us & Get <span class="span">25% Off.</span>
-          </p>
-
-          <form action="" class="input-wrapper">
-            <div class="icon-wrapper">
-              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-
-              <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
-            </div>
-
-            <button type="submit" class="btn btn-secondary">
-              <span class="text text-1">Subscribe</span>
-
-              <span class="text text-2" aria-hidden="true">Subscribe</span>
-            </button>
-          </form>
-
-        </div>
-
-        <ul class="footer-list">
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Home</a>
-          </li>
-
-          <li>
-            <a href="products.html" class="label-2 footer-link hover-underline">Products</a>
-          </li>
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">About Us</a>
-          </li>
-
-         
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Contact</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-list">
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
-          </li>
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
-          </li>
-
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
-          </li>
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Google Map</a>
-          </li>
-
-        </ul>
-
-      </div>
-
-      <div class="footer-bottom">
-
-        <p class="copyright">
-          &copy; Little Bird Toy Shop. All Rights Reserved | Crafted by <a href="https://github.com/J-Groesbeck/Partner-Project---Toy-Store-Project"
-            target="_blank" class="link">Hardav Pandya And Jacob Grosbeck</a>
-        </p>
-
-      </div>
-
-    </div>
+  <footer id="footer">
+    <a href="https://www.facebook.com/LittleBirdToyCo" target="_blank" class="fa-links border-start border-end"><i
+        class="fa-brands fa-facebook fa-2xl pointer"></i></a>
+    <a href="https://www.instagram.com/LittleBirdToyCo" target="_blank" class="fa-links border-end"><i
+        class="fa-brands fa-instagram fa-2x pointer"></i></a>
+    <a href="https://x.com/LittleBirdToys" target="_blank" class="fa-links border-end"><i
+        class="fa-brands fa-twitter fa-2xl pointer"></i></a>
+    <a href="https://www.snapchat.com/add/LittleBirdToys" target="_blank" class="fa-links border-end"><i
+        class="fa-brands fa-snapchat fa-2xl pointer"></i></a>
+    <a href="https://github.com/J-Groesbeck/Partner-Project---Toy-Store-Project" target="_blank"
+      class="fa-links border-end"><i class="fa-brands fa-github fa-2xl"></i></a><br>
+    <img src="main-imgs/logo-only-text.png" class="footer-logo-sizing" style="height: 69px;">
+    <p>© 2024 Little Bird Toys, Inc.</p>
   </footer>
 
 

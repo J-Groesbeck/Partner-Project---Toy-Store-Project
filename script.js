@@ -51,7 +51,7 @@ const productsInfo = [{
     rating: 4.1,
     reviews: [`☆5 - Beautiful Craftsmanship<br>The Wooden Car is beautifully crafted and feels very durable. The mix of hardwoods gives it a unique look. Perfect for older kids due to the small parts.`, 
         `☆4 - Great Quality, but Be Cautious<br>The quality and finish of this car are excellent. However, parents should be cautious with younger children due to potential choking hazards. Overall, it's a wonderful toy for imaginative play.`, 
-        `☆3.3 - Lovely but Pricey<br>This wooden car is lovely and well-made, but I find it a bit pricey for its size. Also, the small parts make it unsuitable for toddlers. Still, it's a charming piece for older kids.`]
+        `☆3.3 - Lovely but Pricey<br>This wooden car is lovely and well-made, but I find it a bit pricey for its size. Also, the small parts make it unsuitable for toddlers. Still, it's a charming piece for older kids. We found the SuperCar Toy much better!`]
 },
 {
     name: 'Wooden Dog',
@@ -215,8 +215,8 @@ function displayCart() {
     const totalPriceContainer = document.createElement('div');
     totalPriceContainer.classList = 'col-12';
     totalPriceContainer.innerHTML = `<div class="row">
-                                        <div class="col-6">Total: $${getTotalPrice()}</div>
-                                        <div class="col-6"><a class="btn btn-primary mb-0" target="_blank">Place Order (out of stock)</a></div>
+                                        <div class="col-6"><h4>Total: $${getTotalPrice()}</h4></div>
+                                        <div class="col-6"><a class="btn btn-secondary mb-0" target="_blank">Place Order (out of stock)</a></div>
                                     </div>`;
     cartContainer.appendChild(totalPriceContainer);
 }

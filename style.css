@@ -48,10 +48,16 @@ header nav {
 footer {
   background-color: #ff9464;
   padding: 2rem;
+  margin-top: 3rem;
+  text-align: center !important;
+  padding-bottom: .5rem !important;
+  padding-top: 1rem !important;
+  justify-content: center;
 }
 
 .fa-links {
   color: black;
+  display: inline !important;
 }
 
 .footer-logo-sizing {
@@ -265,10 +271,6 @@ footer {
       font-size: 25px;
     }
   }
-}
-
-a {
-  color: transparent;
 }
 
 .card-inner {
