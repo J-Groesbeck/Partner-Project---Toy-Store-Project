@@ -1,7 +1,7 @@
 const productsInfo = [{
     name: 'Wooden Airplane',
     price: 19.99,
-    image: 'product-imgs/plane1.png',
+    image: 'main-imgs/airmain.jpg',
     description: `Soar through imaginative skies with this classic wooden airplane. Handcrafted from sustainable Baltic birch wood with a safe, natural harvest finish and a spinning propeller. Measures 3.5"H x 7"L x 7"W.'`,
     ages: 'Toddlers',
     rating: 4.5,
@@ -12,7 +12,7 @@ const productsInfo = [{
 {
     name: 'Wooden Train Set',
     price: 34.99,
-    image: 'product-imgs/train1.png',
+    image: 'main-imgs/trainmain.jpg',
     description: `Embark on a charming journey with this beautiful handcrafted wooden train set. Engine and three interchangeable cars boast intricate details made from real beech wood. Large size (84cm L x 11cm H x 13cm W) with moving wheels and a fully ecological design.`,
     ages: '3+',
     rating: 4.7,
@@ -23,7 +23,7 @@ const productsInfo = [{
 {
     name: 'Wooden Boat',
     price: 14.99,
-    image: 'product-imgs/boat1.png',
+    image: 'main-imgs/boatmain.jpg',
     description: `Set sail for bathtub adventures with this adorable wooden boat. Made from solid Maine white pine, this handcrafted toy floats and features rounded edges for safety. Includes two peg "lobster people." Size: 10.5"W x 3.5"H.`,
     ages: 'All Ages',
     rating: 4.4,
@@ -77,7 +77,7 @@ function generateProductCards() {
         <div class="card">
             <div class="card-inner" style="--clr:#fff;">
                 <div class="box">
-                    <div class="imgBox  ">
+                    <div class="imgBox">
                         <img src="${product.image}">
                     </div>
                     <div class="icon">

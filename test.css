@@ -1554,6 +1554,9 @@ textarea.input-field {
   margin-block-start: 40px;
 }
 
+#footer {
+  background-color: #f3753f;
+}
 
 .border-start {
   border-left: 2px solid #985122 !important;
